@@ -8,7 +8,6 @@ import java.util.Map;
 
 @Data
 public class OrderData {
-//    private Integer tableNumber;
     private List<OrderedDishData> orderedDish;
     private BigDecimal totalSum;
 }

@@ -13,7 +13,6 @@ public class MenuService {
         OrderData orderData= new OrderData();
         double sum = 0;
         Map<Long, Integer> orderedDishes = orderForm.getOrderedDishes();
-//        Map<String, Integer> orderedDishes = new HashMap<>();
         List<OrderedDishData> orderedDishData = new ArrayList<>();
         for (Map.Entry<Long, Integer> item: orderedDishes.entrySet()){
             DishForm dishForm = getDishForm(item.getKey());
@@ -21,7 +20,6 @@ public class MenuService {
             sum = sum + dishForm.getPrice().doubleValue();
         }
 
-//        orderData.setTableNumber(tableNumber);
         orderData.setOrderedDish(orderedDishData);
         orderData.setTotalSum(new BigDecimal(sum));
         return orderData;
@@ -61,12 +59,11 @@ public class MenuService {
     private List<DishForm> getDishes() {
         List<DishForm> dishForms = new ArrayList<>();
 
-        // Create 10 different DishForm objects with different names and descriptions
         for (int i = 1; i < 10; i++) {
             Long id = (long) i;
             String name = generateRealDishNames(i);
             String description = generateDishDescription(i);
-            BigDecimal price = BigDecimal.valueOf(i * 1.5); // Adjust the price calculation as needed
+            BigDecimal price = BigDecimal.valueOf(i * 1.5);
             DishForm dishForm = new DishForm(id, name, description, price);
             dishForms.add(dishForm);
         }
@@ -76,12 +73,11 @@ public class MenuService {
     private List<DishForm> getDrinks(int count) {
         List<DishForm> dishForms = new ArrayList<>();
 
-        // Create 10 different DishForm objects with different names and descriptions
         for (int i = 1; i < count; i++) {
             Long id = (long) i;
             String name = getDrinkNames(i);
             String description = generateDrinksDescription(i);
-            BigDecimal price = BigDecimal.valueOf(i * 1.5); // Adjust the price calculation as needed
+            BigDecimal price = BigDecimal.valueOf(i * 1.5);
             DishForm dishForm = new DishForm(id, name, description, price);
             dishForms.add(dishForm);
         }
@@ -89,9 +85,7 @@ public class MenuService {
     }
 
     public String generateRealDishNames(int index) {
-        List<String> dishNames = Arrays.asList("Pasta Carbonara", "Chicken Alfredo", "Margherita Pizza", "Sushi Roll", "Caesar Salad", "Beef Stir-Fry", "Burger with Fries", "Pad Thai", "Grilled Salmon", "Ramen Noodles"
-                // Add more dish names as needed
-        );
+        List<String> dishNames = Arrays.asList("Pasta Carbonara", "Chicken Alfredo", "Margherita Pizza", "Sushi Roll", "Caesar Salad", "Beef Stir-Fry", "Burger with Fries", "Pad Thai", "Grilled Salmon", "Ramen Noodles");
         return dishNames.get(index);
     }
 

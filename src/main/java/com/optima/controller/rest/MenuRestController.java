@@ -16,13 +16,11 @@ public class MenuRestController {
 
     @GetMapping(value = "/api/v1/menu/view/{tableNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<MenuForm> view(@PathVariable Integer tableNumber) {
-        System.out.println(tableNumber);
         return ResponseEntity.ok(menuService.getMock());
     }
 
     @PostMapping(value = "/api/v1/order/place/{tableNumber}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OrderData> placeOrder(@PathVariable Integer tableNumber, @RequestBody OrderForm orderForm) {
-        System.out.println(tableNumber);
 
         return ResponseEntity.ok(menuService.place(orderForm));
     }
