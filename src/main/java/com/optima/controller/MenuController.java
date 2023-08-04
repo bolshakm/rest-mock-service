@@ -20,4 +20,12 @@ public class MenuController {
         return PageConstants.MENU_VIEW;
 
     }
+
+    @GetMapping("/menu/view/v2")
+    public String vewv2(Model model) {
+        model.addAttribute("selectedMenu", menuService.getMock());
+
+        return PageConstants.MENU;
+    }
+
 }
