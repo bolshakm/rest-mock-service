@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Optima</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body style="background-color:#ebf6e9;">
+
+
+<h2><div align="center" th:text="${selectedMenu.name}"/></h2>
+<form th:action="@{/order/place}" align="center" method="post">
+    <div th:each="category : ${selectedMenu.categories}">
+        <h3 align="center" th:text="${category.name}"></h3>
+        <table align="center" class="table table-bordered w-75" style="border: 3px solid #ddd !important;">
+            <thead>
+            <tr class="table-info">
+                <th class="w-10">Qty</th>
+                <th class="w-10"></th>
+                <th class="w-25 text-left">Name</th>
+                <th class="w-50 text-left">Description</th>
+                <th class="w-25">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-light" th:each="dish : ${category.dishes}">
+                <th> <input style="width: 3em" type="number" name="qty" value="1" min="1" max="9"></th>
+                <th> <input type="checkbox" name="ids" th:attr="value=${dish.id}"></th>
+                <th scope="row" class="text-left" th:text="${dish.name}"></th>
+                <td class="text-left" th:text="${dish.description}"></td>
+                <td th:text="${dish.price} + '€'"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="submit" class="btn btn-success">Order</button>
+</form>
+
+
+</body>
+</html>
