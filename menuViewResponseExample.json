@@ -1,0 +1,127 @@
+{
+  "id": 1,
+  "name": "Summer menu",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Drinks",
+      "dishes": [
+        {
+          "id": 1,
+          "name": "Cappuccino",
+          "description": "Description for Drink Cappuccino",
+          "price": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Latte",
+          "description": "Description for Drink Latte",
+          "price": 3.0
+        },
+        {
+          "id": 3,
+          "name": "Mocha",
+          "description": "Description for Drink Mocha",
+          "price": 4.5
+        },
+        {
+          "id": 4,
+          "name": "Americano",
+          "description": "Description for Drink Americano",
+          "price": 6.0
+        },
+        {
+          "id": 5,
+          "name": "Flat White",
+          "description": "Description for Drink Flat White",
+          "price": 7.5
+        },
+        {
+          "id": 6,
+          "name": "Macchiato",
+          "description": "Description for Drink Macchiato",
+          "price": 9.0
+        },
+        {
+          "id": 7,
+          "name": "Iced Coffee",
+          "description": "Description for Drink Iced Coffee",
+          "price": 10.5
+        },
+        {
+          "id": 8,
+          "name": "Cold Brew",
+          "description": "Description for Drink Cold Brew",
+          "price": 12.0
+        },
+        {
+          "id": 9,
+          "name": "Chai Latte",
+          "description": "Description for Drink Chai Latte",
+          "price": 13.5
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Dishes",
+      "dishes": [
+        {
+          "id": 1,
+          "name": "Chicken Alfredo",
+          "description": "Description for Drink Chicken Alfredo",
+          "price": 1.5
+        },
+        {
+          "id": 2,
+          "name": "Margherita Pizza",
+          "description": "Description for Drink Margherita Pizza",
+          "price": 3.0
+        },
+        {
+          "id": 3,
+          "name": "Sushi Roll",
+          "description": "Description for Drink Sushi Roll",
+          "price": 4.5
+        },
+        {
+          "id": 4,
+          "name": "Caesar Salad",
+          "description": "Description for Drink Caesar Salad",
+          "price": 6.0
+        },
+        {
+          "id": 5,
+          "name": "Beef Stir-Fry",
+          "description": "Description for Drink Beef Stir-Fry",
+          "price": 7.5
+        },
+        {
+          "id": 6,
+          "name": "Burger with Fries",
+          "description": "Description for Drink Burger with Fries",
+          "price": 9.0
+        },
+        {
+          "id": 7,
+          "name": "Pad Thai",
+          "description": "Description for Drink Pad Thai",
+          "price": 10.5
+        },
+        {
+          "id": 8,
+          "name": "Grilled Salmon",
+          "description": "Description for Drink Grilled Salmon",
+          "price": 12.0
+        },
+        {
+          "id": 9,
+          "name": "Ramen Noodles",
+          "description": "Description for Drink Ramen Noodles",
+          "price": 13.5
+        }
+      ]
+    }
+  ],
+  "active": true
+}

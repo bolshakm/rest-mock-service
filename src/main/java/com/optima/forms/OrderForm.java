@@ -8,6 +8,6 @@ import java.util.Map;
 @Data
 public class OrderForm {
     private Integer tableNumber;
-    private Map<Long, Integer>orderedDishes;
+    private Map<Long, Integer> orderedDishes;
 
 }
