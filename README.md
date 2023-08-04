@@ -61,3 +61,7 @@ Response example:
   "totalSum": 13.5
 }
 ```
+
+New menu page:
+GET
+: http://localhost:8080/menu/view/v2
