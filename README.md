@@ -65,3 +65,9 @@ Response example:
 New menu page:
 GET
 : http://localhost:8080/menu/view/v2
+
+Request bill
+GET
+: http://localhost:8080/api/v1/bill/1?type=card
+
+1 is a table number, type card or cash

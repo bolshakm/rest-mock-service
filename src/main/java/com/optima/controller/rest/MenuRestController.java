@@ -19,6 +19,11 @@ public class MenuRestController {
         return ResponseEntity.ok(menuService.getMock());
     }
 
+    @GetMapping(value = "/api/v1/bill/{tableNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> bill(@PathVariable Integer tableNumber, @RequestParam String type) {
+        return ResponseEntity.ok("Success request for bill for table #" + tableNumber +". Payment is " + type);
+    }
+
     @PostMapping(value = "/api/v1/order/place/{tableNumber}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OrderData> placeOrder(@PathVariable Integer tableNumber, @RequestBody OrderForm orderForm) {
 

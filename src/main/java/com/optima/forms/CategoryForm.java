@@ -8,5 +8,6 @@ import java.util.List;
 public class CategoryForm {
     private Long id;
     private String name;
+    private String description;
     private List<DishForm> dishes;
 }
