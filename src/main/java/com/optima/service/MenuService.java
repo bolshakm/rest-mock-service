@@ -28,24 +28,26 @@ public class MenuService {
 
     public MenuForm getMock() {
         MenuForm result = new MenuForm();
-
+        result.setTableNumber(1);
         List<CategoryForm> categoryFormList = new ArrayList<>();
 
         CategoryForm drinksCateg = new CategoryForm();
         drinksCateg.setId(1L);
         drinksCateg.setName("Drinks");
+        drinksCateg.setDescription("Drinks category description");
         drinksCateg.setDishes(getDrinks(10));
 
         CategoryForm dishesCateg = new CategoryForm();
         dishesCateg.setId(1L);
         dishesCateg.setName("Dishes");
+        drinksCateg.setDescription("Dishes category description");
         dishesCateg.setDishes(getDishes());
 
         categoryFormList.add(drinksCateg);
         categoryFormList.add(dishesCateg);
 
         result.setId(1L);
-        result.setName("Summer menu");
+        result.setName("Summertime");
         result.setCategories(categoryFormList);
         result.setActive(true);
 
