@@ -34,14 +34,17 @@ public class MenuRestController {
         return ResponseEntity.ok(menuService.place(orderForm));
     }
 
-//    @PostMapping(value = "/api/v1/order/place", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity<OrderData> placeOrder(@RequestBody OrderForm orderForm) {
-//
-//        return ResponseEntity.ok(menuService.place(orderForm));
-//    }
+    @PostMapping(value = "/api/v1/order/place", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<OrderData> placeOrder(@RequestBody OrderForm orderForm) {
+
+        return ResponseEntity.ok(menuService.place(orderForm));
+    }
 
     @GetMapping(value = "/api/v1/order/{cafe}/{tableNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OrderData> order(@PathVariable Integer cafe, @PathVariable Integer tableNumber) {
+        if (tableNumber == 33){
+            return ResponseEntity.ok().build();
+        }
         return ResponseEntity.ok(menuService.order());
     }
 

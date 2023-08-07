@@ -117,7 +117,7 @@ public class MenuService {
     }
 
     private String getDrinkNames(int index) {
-        List<String> drinkNames = Arrays.asList("Espresso", "Cappuccino", "Latte", "Mocha", "Americano", "Flat White", "Macchiato", "Iced Coffee", "Cold Brew", "Chai Latte");
+        List<String> drinkNames = Arrays.asList("Espresso", "Espresso", "Latte", "Mocha", "Americano", "Flat White", "Macchiato", "Iced Coffee", "Cold Brew", "Chai Latte");
         return drinkNames.get(index);
     }
 
