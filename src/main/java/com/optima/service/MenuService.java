@@ -15,7 +15,29 @@ public class MenuService {
         Map<Long, Integer> orderedDishes = orderForm.getOrderedDishes();
         List<OrderedDishData> orderedDishData = new ArrayList<>();
         for (Map.Entry<Long, Integer> item: orderedDishes.entrySet()){
-            DishForm dishForm = getDishForm(item.getKey());
+            DishForm dishForm = getDrinksForm(item.getKey());
+            orderedDishData.add(new OrderedDishData(dishForm, item.getValue()));
+            sum = sum + dishForm.getPrice().doubleValue();
+        }
+
+        orderData.setOrderedDish(orderedDishData);
+        orderData.setTotalSum(new BigDecimal(sum));
+        return orderData;
+    }
+
+    public OrderData order( ){
+        OrderData orderData= new OrderData();
+        double sum = 0;
+        Map<Long, Integer> orderedDishes = new HashMap<>();
+        orderedDishes.put(1L, 3);
+        orderedDishes.put(3L, 2);
+        orderedDishes.put(4L, 3);
+        orderedDishes.put(35L, 3);
+        orderedDishes.put(36L, 4);
+        orderedDishes.put(37L, 3);
+        List<OrderedDishData> orderedDishData = new ArrayList<>();
+        for (Map.Entry<Long, Integer> item: orderedDishes.entrySet()){
+            DishForm dishForm = getDrinksForm(item.getKey());
             orderedDishData.add(new OrderedDishData(dishForm, item.getValue()));
             sum = sum + dishForm.getPrice().doubleValue();
         }
@@ -35,7 +57,7 @@ public class MenuService {
         drinksCateg.setId(1L);
         drinksCateg.setName("Drinks");
         drinksCateg.setDescription("Drinks category description");
-        drinksCateg.setDishes(getDrinks(10));
+        drinksCateg.setDishes(getDrinks());
 
         CategoryForm dishesCateg = new CategoryForm();
         dishesCateg.setId(1L);
@@ -54,8 +76,11 @@ public class MenuService {
         return result;
     }
 
-    public DishForm getDishForm(Long index){
-        return getDishes().get(index.intValue());
+    public DishForm getDrinksForm(Long id){
+        List<DishForm> dishes = new ArrayList<>();
+        dishes.addAll(getDishes());
+        dishes.addAll(getDrinks());
+        return dishes.stream().filter(item -> Objects.equals(item.getId(), id)).findFirst().get();
     }
 
     private List<DishForm> getDishes() {
@@ -72,11 +97,11 @@ public class MenuService {
         return dishForms;
     }
 
-    private List<DishForm> getDrinks(int count) {
+    private List<DishForm> getDrinks() {
         List<DishForm> dishForms = new ArrayList<>();
 
-        for (int i = 1; i < count; i++) {
-            Long id = (long) i;
+        for (int i = 1; i < 10; i++) {
+            Long id = (long) i + 34;
             String name = getDrinkNames(i);
             String description = generateDrinksDescription(i);
             BigDecimal price = BigDecimal.valueOf(i * 1.5);
